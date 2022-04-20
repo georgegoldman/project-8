@@ -7,6 +7,7 @@ import { LandingPageComponent } from './landing-page/landing-page.component';
 import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './login/login.component';
     BrowserModule,
     AppRoutingModule,
     MaterialModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

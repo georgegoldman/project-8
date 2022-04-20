@@ -1,6 +1,35 @@
-<div class="col">
+<div class="col h-100">
   <div class="d-flex justify-content-center">
-    <h1>Login Page</h1>
+    <div class="pt-5">
+      <h1>Login</h1>
+      <hr>
+    </div>
   </div>
+  <div class="h-75">
+    <div class="position-relative h-100">
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <p>
+          <mat-form-field appearance="legacy" class="col-12">
+            <mat-label>Enter username</mat-label>
+            <input matInput
+              placeholder="ukaegbujohn"
+              type="text" id="username"
+              [formControl]="username"
+              class="col-12"
+              required>
+            <mat-error *ngIf="username.invalid">{{ getErrorMessage() }}</mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <button mat-stroked-button color="accent" class="col-12">Login</button>
 
+        <section class="my-3">
+          <button mat-button
+          routerLink="/register"
+          color="primary">Register if you don't have an account</button>
+        </section>
+      </div>
+    </div>
+  </div>
 </div>
