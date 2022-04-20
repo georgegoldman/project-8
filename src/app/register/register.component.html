@@ -1,1 +1,70 @@
-<p>register works!</p>
+<div class="col h-100">
+  <div class="d-flex justify-content-center">
+    <div class="pt-5">
+      <h1>Register</h1>
+      <hr>
+    </div>
+  </div>
+  <div class="h-75">
+    <div class="position-relative h-100">
+      <div class="position-absolute top-50 start-50 translate-middle">
+        <p>
+          <mat-form-field appearance="legacy" class="col-12">
+            <mat-label>Enter email</mat-label>
+            <input matInput
+              placeholder="ukaegbujohn@email.com"
+              type="email" id="email"
+              [formControl]="email"
+              class="col-12"
+              autocomplete="off"
+              required>
+            <mat-error *ngIf="email.invalid">{{ getEmailErrorMessage() }}</mat-error>
+            <mat-icon matSuffix>email</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy" class="col-12">
+            <mat-label>Enter username</mat-label>
+            <input matInput
+              placeholder="ukaegbujohn@email.com"
+              type="username" id="uername"
+              [formControl]="username"
+              class="col-12"
+              autocomplete="off"
+              required>
+            <mat-error *ngIf="username.invalid">{{ getUsernameErrorMessage() }}</mat-error>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="legacy" class="col-12">
+            <mat-label>Enter your password</mat-label>
+            <input matInput
+            [type]="hide ? 'password' : 'text'"
+            id="password"
+            [formControl]="password"
+            class="col-12"
+            placeholder="ukJohn488@"
+            autocomplete="off"
+            required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error *ngIf="password.invalid">{{ getPasswordErrorMessage() }}</mat-error>
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+
+        </p>
+        <button mat-stroked-button color="accent" class="col-12">Register</button>
+
+        <section class="my-3">
+          <button mat-button
+          routerLink="/login"
+          color="primary">Login if you do have an account</button>
+        </section>
+      </div>
+    </div>
+  </div>
+</div>
