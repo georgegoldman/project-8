@@ -22,7 +22,7 @@
             cdkDropList
             cdkDropListOrientation="horizontal"
             >
-              <mat-chip *ngFor="let subService of provider.selectedOptions.selected[0]?.value">
+              <mat-chip *ngFor="let subService of provider.selectedOptions.selected[0]?.value" routerLink='/airtime/{{subService}}' >
                   {{ subService }}
               </mat-chip>
             </mat-chip-list>

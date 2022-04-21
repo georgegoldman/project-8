@@ -10,10 +10,12 @@ export class HomeComponent implements OnInit {
   typesOfServices = [
     {
       name: 'Buy Airtime',
+      route: 'airtime',
       provider: ['MTN', 'GLO', '9Mobile', 'AIRTEL' ]
     },
     {
       name: 'Pay Internet Bill',
+      route: '',
       provider: [
         'Spectranet Limited',
         'Smile Bundle',
@@ -27,6 +29,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Pay TV Bill',
+      route: '',
       provider: [
         'Dstv Box Office Wallet Topup',
         'Dstv Subcription',
@@ -36,6 +39,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Pay Electricity Bill',
+      route: '',
       provider: [
         'Benin EDC',
         'Eko EDC',
@@ -51,6 +55,7 @@ export class HomeComponent implements OnInit {
     },
     {
       name: 'Pay for Betting',
+      route: '',
       provider: [
         'Nairabet',
         '1xbet',
