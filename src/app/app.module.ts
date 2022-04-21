@@ -11,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AirtimePageComponent } from './airtime-page/airtime-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { AirtimePageComponent } from './airtime-page/airtime-page.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AirtimePageComponent
+    AirtimePageComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
