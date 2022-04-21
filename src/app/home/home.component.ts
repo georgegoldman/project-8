@@ -11,60 +11,65 @@ export class HomeComponent implements OnInit {
     {
       name: 'Buy Airtime',
       route: 'airtime',
-      provider: ['MTN', 'GLO', '9Mobile', 'AIRTEL' ]
+      provider: [
+        { serviceProvider: 'MTN', subRoute: 'mtn', },
+        { serviceProvider: 'GLO', subRoute: 'glo' },
+        { serviceProvider: '9mobile', subRoute: '9mobile' },
+        { serviceProvider: 'AIRTEL', subRoute: 'airtel' }
+      ]
     },
     {
       name: 'Pay Internet Bill',
       route: '',
       provider: [
-        'Spectranet Limited',
-        'Smile Bundle',
-        'Ipnx Subscription Payments',
-        'Mtn Vtu Plus Data Plan',
-        '9Mobile Recharge(e-top Up)',
-        'Airtel Prepaid Data Bundle',
-        'Airtel Voice, Data & Sms Bundles',
-        'Glo Data Bundle',
+        {serviceProvider: 'Spectranet Limited', subRoute: 'spectranet-limited'},
+        { serviceProvider: 'Smile Bundle', subRoute: 'smile-bundle' },
+        { serviceProvider: 'Ipnx Subscription Payments', subRoute: 'ipnx-subscription-payments' },
+        { serviceProvider: 'Mtn Vtu Plus Data Plan', subRoute: 'mtn-vtu-plus-data-plan' },
+        { serviceProvider: '9Mobile Recharge(e-top Up)', subRoute: '9mobile-recharge-e-top-Up' },
+        { serviceProvider: 'Airtel Prepaid Data Bundle', subRoute: 'airtel-prepaid-data-bundle' },
+        { serviceProvider: 'Airtel Voice, Data & Sms Bundles', subRoute: 'airtelvoice-data-sms-bundles' },
+        { serviceProvider: 'Glo Data Bundle', subRoute: 'glo-data-bundle' },
       ]
     },
     {
       name: 'Pay TV Bill',
       route: '',
       provider: [
-        'Dstv Box Office Wallet Topup',
-        'Dstv Subcription',
-        'Gotv',
-        'Startimes Payments'
+        { serviceProvider: 'Dstv Box Office Wallet Topup', subRoute: 'dstv-box-office-wallet-topup' },
+        { serviceProvider: 'Dstv Subcription', subRoute: 'dstv-subcription' },
+        { serviceProvider: 'Gotv', subRoute: 'gotv' },
+        { serviceProvider: 'Startimes Payments', subRoute: 'startimes-payments' }
       ]
     },
     {
       name: 'Pay Electricity Bill',
       route: '',
       provider: [
-        'Benin EDC',
-        'Eko EDC',
-        'Enugu EDC',
-        'Ibadan EDC',
-        'Ikeja EDC',
-        'Jos EDC',
-        'Kaduna EDC',
-        'Abuja EDC',
-        'Kedco',
-        'PHed Postpaid'
+        { serviceProvider: 'Benin EDC', subRoute: 'benin-edc' },
+        { serviceProvider: 'Eko EDC', subRoute: 'eko-edc' },
+        { serviceProvider: 'Enugu EDC', subRoute: 'enugu-edc' },
+        { serviceProvider: 'Ibadan EDC', subRoute: 'ibadan-edc' },
+        { serviceProvider: 'Ikeja EDC', subRoute: 'ikeja-edc' },
+        { serviceProvider: 'Jos EDC', subRoute: 'jos-edc' },
+        { serviceProvider: 'Kaduna EDC', subRoute: 'kaduna-edc' },
+        { serviceProvider: 'Abuja EDC', subRoute: 'abuja-edc' },
+        { serviceProvider: 'Kedco', subRoute: 'kedco' },
+        { serviceProvider: 'PHed Postpaid', subRoute: 'phed-postpaid' }
       ]
     },
     {
       name: 'Pay for Betting',
       route: '',
       provider: [
-        'Nairabet',
-        '1xbet',
-        'Bet9ja',
-        'BetKing',
-        'Betway',
-        'Merrybet Gold Limited',
-        'Sportybet',
-        'Winners Golden Bet'
+        { serviceProvider: 'Nairabet', subRoute: 'nairabet' },
+        { serviceProvider: '1xbet', subRoute: '1xbet' },
+        { serviceProvider: 'Bet9ja', subRoute: 'Bet9ja' },
+        { serviceProvider: 'BetKing', subRoute: 'betking' },
+        { serviceProvider: 'Betway', subRoute: 'betway' },
+        { serviceProvider: 'Merrybet Gold Limited', subRoute: 'merrybet-gold-limited' },
+        { serviceProvider: 'Sportybet', subRoute: 'sportybet' },
+        { serviceProvider: 'Winners Golden Bet', subRoute: 'winners-golden-bet' }
       ]
     }
   ]

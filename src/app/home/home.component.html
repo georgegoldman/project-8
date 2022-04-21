@@ -10,7 +10,7 @@
 
     <div class="d-flex justify-content-center">
       <mat-selection-list #provider [multiple]="false">
-        <mat-list-option *ngFor="let service of typesOfServices" [value]="service.provider">
+        <mat-list-option *ngFor="let service of typesOfServices" [value]="service">
           {{ service.name }}
         </mat-list-option>
       </mat-selection-list>
@@ -22,8 +22,8 @@
             cdkDropList
             cdkDropListOrientation="horizontal"
             >
-              <mat-chip *ngFor="let subService of provider.selectedOptions.selected[0]?.value" routerLink='/airtime/{{subService}}' >
-                  {{ subService }}
+              <mat-chip *ngFor="let subService of provider.selectedOptions.selected[0]?.value.provider" routerLink='/{{provider.selectedOptions.selected[0]?.value.route}}/{{subService.subRoute}}' >
+                  {{ subService.serviceProvider }}
               </mat-chip>
             </mat-chip-list>
     </div>
