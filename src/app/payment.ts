@@ -3,7 +3,7 @@ interface Provider {
   subRoute: string
 }
 
-export interface Airtime {
+export interface Payment {
   name: string,
   route:string,
   provider: Provider[]

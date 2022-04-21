@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { HomeComponent } from '../home/home.component';
-import { Airtime } from '../payment';
 
 @Component({
   selector: 'app-airtime-page',

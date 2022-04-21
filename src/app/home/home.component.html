@@ -10,7 +10,7 @@
 
     <div class="d-flex justify-content-center">
       <mat-selection-list #provider [multiple]="false">
-        <mat-list-option *ngFor="let service of typesOfServices" [value]="service">
+        <mat-list-option *ngFor="let service of payments" [value]="service">
           {{ service.name }}
         </mat-list-option>
       </mat-selection-list>
