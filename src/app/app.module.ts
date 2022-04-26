@@ -12,7 +12,6 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { AirtimePageComponent } from './airtime-page/airtime-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { InternetServiceComponent } from './internet-service/internet-service.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +22,6 @@ import { InternetServiceComponent } from './internet-service/internet-service.co
     HomeComponent,
     AirtimePageComponent,
     PageNotFoundComponent,
-    InternetServiceComponent,
   ],
   imports: [
     BrowserModule,
