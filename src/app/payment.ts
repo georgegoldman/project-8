@@ -1,4 +1,4 @@
-interface Provider {
+ interface Provider {
   serviceProvider: string,
   subRoute: string
 }

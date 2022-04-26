@@ -21,7 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RegisterComponent,
     HomeComponent,
     AirtimePageComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
   ],
   imports: [
     BrowserModule,

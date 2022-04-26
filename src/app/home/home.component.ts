@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Payment } from '../payment';
-import { PaymentService } from '../payment.service';
+import { HomeService } from '../home.service';
 
 @Component({
   selector: 'app-home',
@@ -11,10 +11,11 @@ export class HomeComponent implements OnInit {
 
   payments:Payment[] = []
 
-  constructor(private paymentService: PaymentService) { }
+  constructor(private homeService: HomeService) { }
 
   getPayments():void {
-    this.payments = this.paymentService.getPayments();
+    this.homeService.getPayments()
+      .subscribe(payments => this.payments = payments)
   }
 
   ngOnInit(): void {
