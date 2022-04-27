@@ -14,7 +14,7 @@ export const PAYMENTS:Payment[] = [
   },
   {
     name: 'Pay Internet Bill',
-    route: 'internet-services',
+    route: 'internet-bills',
     provider: [
       {serviceProvider: 'Spectranet Limited', subRoute: 'spectranet-limited'},
       { serviceProvider: 'Smile Bundle', subRoute: 'smile-bundle' },
