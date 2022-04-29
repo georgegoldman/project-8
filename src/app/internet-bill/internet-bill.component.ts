@@ -11,6 +11,8 @@ import { Payment } from '../payment'
 })
 export class InternetBillComponent implements OnInit {
 
+  isp!: string
+
   internetBills: Payment = {
     name: '',
     route: '',
@@ -19,7 +21,6 @@ export class InternetBillComponent implements OnInit {
 
   internetFormGroup = new FormGroup({
     amount: new FormControl('', Validators.required),
-    isp: new FormControl('', Validators.required),
     package: new FormControl('', Validators.required),
     tel: new FormControl('', Validators.required),
 
@@ -29,7 +30,14 @@ export class InternetBillComponent implements OnInit {
 
   ngOnInit(): void {
     this.getInternetBill();
-    this.route.params.forEach(element => this.internetFormGroup.controls['isp'].setValue(element['id']))
+    this.route.params
+      .forEach(element => {
+        this.internetBills.provider.forEach((service) => {
+          if (service.subRoute === element['id']){
+            this.isp = service.serviceProvider
+          }
+        })
+      })
 
   }
 

@@ -2,20 +2,12 @@
 <div class="position-relative bgwarning h-75 my-5 m-lg-5 p-1 p-lg-5">
   <div class="position-absolute top-50 start-50 translate-middle col-12 col-lg-4 h-100 pt-5">
 
-    <h3>Pay internet Bills</h3><hr>
+    <h3>Buy {{ isp }} Internet Plan</h3>
+    <p></p>
+    <hr>
 
-    <div class="col-12 bglight h-100 pt-5">
+    <div class="col-12 bglight h-100 pt-3">
       <form class="col-12" [formGroup]="internetFormGroup" (ngSubmit)="onSubmit()">
-
-          <mat-form-field appearance="legacy" class="col-12">
-            <mat-label>Serivice Provider</mat-label>
-            <mat-select formControlName="isp" id="isp">
-              <mat-option
-                *ngFor="let internetProvider of internetBills.provider"
-                value="{{internetProvider.serviceProvider}}" [value]="internetProvider.serviceProvider" >{{ internetProvider.serviceProvider }}</mat-option>
-            </mat-select>
-            <mat-error *ngIf="internetFormGroup.invalid">Network {{ erroMessage() }}</mat-error>
-          </mat-form-field>
 
           <mat-form-field appearance="legacy" class="col-12">
             <mat-label>Package</mat-label>
