@@ -11,13 +11,13 @@ import { InternetBillComponent } from './internet-bill/internet-bill.component';
 
 const routes: Routes = [
   {path: '', component: LandingPageComponent},
-  {path: 'login', component: LoginComponent},
-  {path: 'register', component: RegisterComponent},
   {path: 'home', component: HomeComponent},
   {path: 'airtime/:id', component: AirtimePageComponent},
   {path: 'internet-bills/:id', component: InternetBillComponent},
 
   {path: '**', component: PageNotFoundComponent},
+  // {path: 'login', component: LoginComponent},
+  // {path: 'register', component: RegisterComponent},
 ];
 
 @NgModule({

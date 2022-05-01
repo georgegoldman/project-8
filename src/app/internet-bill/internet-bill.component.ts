@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
+import { Observable } from 'rxjs';
+import { CurrentRouteGetterService } from '../current-route-getter.service';
 import { InternetBillService } from '../internet-bill.service';
-import { Payment } from '../payment'
+import { PackageAmount, Payment } from '../payment'
 
 @Component({
   selector: 'app-internet-bill',
@@ -11,12 +13,13 @@ import { Payment } from '../payment'
 })
 export class InternetBillComponent implements OnInit {
 
+  packagesAmount!: PackageAmount
   isp!: string
+  ispPackages!: PackageAmount[]
 
   internetBills: Payment = {
     name: '',
     route: '',
-    provider: []
   }
 
   internetFormGroup = new FormGroup({
@@ -26,24 +29,23 @@ export class InternetBillComponent implements OnInit {
 
   })
 
-  constructor(private internetBillService: InternetBillService, private route: ActivatedRoute) { }
+  constructor(private internetBillService: InternetBillService, private currentRoute: CurrentRouteGetterService) { }
 
   ngOnInit(): void {
     this.getInternetBill();
-    this.route.params
-      .forEach(element => {
-        this.internetBills.provider.forEach((service) => {
-          if (service.subRoute === element['id']){
-            this.isp = service.serviceProvider
-          }
-        })
-      })
+    this.setISPString()
 
   }
+
 
   getInternetBill(): void {
     this.internetBillService.getInternetPayment()
       .subscribe(interBill => this.internetBills = interBill)
+  }
+
+  setISPString(): void {
+    this.currentRoute.get()
+      .subscribe(x => console.warn(x))
   }
 
   erroMessage(): string {

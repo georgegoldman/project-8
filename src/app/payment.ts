@@ -1,15 +1,26 @@
-interface PackageAmount {
+export interface PackageAmount {
   package: string,
   amount: number
 }
-interface Provider {
+export interface Provider {
   serviceProvider: string,
   subRoute: string,
-  packageAmount: PackageAmount[]
 }
 
 export interface Payment {
   name: string,
   route:string,
-  provider: Provider[]
+}
+
+
+export interface Service {
+  serviceType: string,
+  serviceName: string,
+  serviceRoute: string
+}
+
+export interface Package {
+  packageName: string,
+  packageAmount: number,
+  packageType: string,
 }
