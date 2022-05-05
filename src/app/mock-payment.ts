@@ -1,14 +1,39 @@
 import { Package, Payment, Provider, Service } from "./payment"
 
 export const PAYMENTS: Payment[] = [
-  {name: "airtime", route: 'airtime'},
-  {name: "internet", route: "internet-bills"},
-  {name: "electricity", route: "ectricity"}
+  {name: "airtime", route: 'airtime', packages: [
+    { serviceName: 'MTN', serviceRoute: 'mtn', serviceType: "airtime"},
+    { serviceName: 'GLO', serviceRoute: 'glo', serviceType: "airtime"},
+    { serviceName: '9mobile', serviceRoute: '9mobile', serviceType: "airtime" },
+    { serviceName: 'AIRTEL', serviceRoute: 'airtel', serviceType: "airtime" },]},
+
+  {name: "internet", route: "internet-bills", packages: [
+    { serviceName: 'spectranet', serviceRoute: 'spectranet-limited', serviceType: "internet" },
+    { serviceName: 'smile bundle', serviceRoute: 'smile-bundle', serviceType: "internet" },
+    { serviceName: 'ipnx subscription', serviceRoute: 'ipnx-subscription-payments', serviceType: "internet" },
+    { serviceName: 'Mtn Vtu Plus Data', serviceRoute: 'mtn-vtu-plus-data', serviceType: "internet" },
+    { serviceName: '9Mobile-recharge(etop Up)', serviceRoute: '9Mobile-recharge-e-top-up', serviceType: "internet" },
+    { serviceName: 'Airtel Prepaid Data Bundle', serviceRoute: 'airtel-prepaid-data-bundle', serviceType: "internet" },
+    { serviceName: 'Airtel Voice, Data & Sms Bundles', serviceRoute: 'airtel-voice-data-sms-bundles', serviceType: "internet" },
+    { serviceName: 'Glo Data Bundle', serviceRoute: 'glo-data-bundle', serviceType: "internet" },
+  ]},
+  {name: "electricity", route: "electricity", packages: [
+    { serviceName: 'Benin EDC', serviceRoute: 'benin-edc', serviceType: "electricity" },
+    { serviceName: 'Enugu EDC', serviceRoute: 'enugu-edc', serviceType: "electricity" },
+    { serviceName: 'Eko EDC', serviceRoute: 'eko-edc', serviceType: "electricity" },
+    { serviceName: 'Ibadan EDC', serviceRoute: 'ibadan-edc', serviceType: "electricity" },
+    { serviceName: 'Ikeja EDC', serviceRoute: 'ikeja-edc', serviceType: "electricity" },
+    { serviceName: 'Jos EDC', serviceRoute: 'jos-edc', serviceType: "electricity" },
+    { serviceName: 'Kaduna EDC', serviceRoute: 'kaduna-edc', serviceType: "electricity" },
+    { serviceName: 'Abuja EDC', serviceRoute: 'abuja-edc', serviceType: "electricity" },
+    { serviceName: 'Kedco', serviceRoute: 'kedco', serviceType: "electricity" },
+    { serviceName: 'PHed Postpaid', serviceRoute: 'phed-postpaid', serviceType: "electricity" },
+  ],}
 
 
 ]
 
-export const SERVICE: Service[] = [
+export const PROVIDERS: Service[] = [
   { serviceName: 'MTN', serviceRoute: 'mtn', serviceType: "airtime"},
   { serviceName: 'GLO', serviceRoute: 'glo', serviceType: "airtime"},
   { serviceName: '9mobile', serviceRoute: '9mobile', serviceType: "airtime" },

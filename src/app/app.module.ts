@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { AirtimePageComponent } from './airtime-page/airtime-page.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { InternetBillComponent } from './internet-bill/internet-bill.component';
+import { ElectricityComponent } from './electricity/electricity.component';
+import { CreditCardDialogComponent } from './credit-card-dialog/credit-card-dialog.component';
+import { PaymentSuccessfullComponent } from './payment-successfull/payment-successfull.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import { InternetBillComponent } from './internet-bill/internet-bill.component';
     AirtimePageComponent,
     PageNotFoundComponent,
     InternetBillComponent,
+    ElectricityComponent,
+    CreditCardDialogComponent,
+    PaymentSuccessfullComponent
   ],
   imports: [
     BrowserModule,

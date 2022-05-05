@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
@@ -7,12 +7,10 @@ import { Observable, of } from 'rxjs';
 })
 export class CurrentRouteGetterService {
 
-  routeVal!: string;
+  constructor(private router: Router) { }
 
-  constructor(private route: ActivatedRoute) { }
-
-  get(): Observable<any> {
-    const theRoute = this.route.params
-    return theRoute
+  get(i: string): void{
+    this.router.url.match(i)
   }
+
 }

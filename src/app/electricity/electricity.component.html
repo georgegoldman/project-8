@@ -2,17 +2,17 @@
 <div class="position-relative bgwarning h-75 my-5 m-lg-5 p-1 p-lg-5">
   <div class="position-absolute top-50 start-50 translate-middle col-12 col-lg-4 h-100 pt-5">
 
-    <!-- <h3>Buy {{ isp }} Internet Plan</h3> -->
+    <h3>Pay Electricity Bill</h3>
     <p></p>
     <hr>
 
     <div class="col-12 bglight h-100 pt-3">
-      <form class="col-12" [formGroup]="internetFormGroup" (ngSubmit)="onSubmit()">
+      <form class="col-12" [formGroup]="electricityFormGroup" (ngSubmit)="onSubmit()">
 
           <mat-form-field class="col-12" appearance="fill">
             <mat-label>Network </mat-label>
             <input matInput
-            value="{{internetFormGroup.controls['provider'].value}}"
+            value="{{electricityFormGroup.controls['provider'].value}}"
             id="provider"
             formControlName="provider"
             >
@@ -27,34 +27,33 @@
             </mat-select>
           </mat-form-field>
 
-          <mat-form-field class="col-12" appearance="fill">
+          <mat-form-field class="col-12" appearance="legacy">
             <mat-label>Amount </mat-label>
             <input matInput
-            value="{{internetFormGroup.controls['amount'].value}}"
+            value="{{electricityFormGroup.controls['amount'].value}}"
             id="amount"
             formControlName="amount"
             >
           </mat-form-field>
 
           <mat-form-field class=" col-12" appearance="legacy">
-            <mat-label>Phone Number or Custimers id</mat-label>
-            <span matPrefix>+234 &nbsp;</span>
-            <input type="tel" matInput
+            <mat-label>Meter Nunber</mat-label>
+            <input type="text" matInput
             maxlength="10"
-            name="tel"
-            id="tel"
+            name="meterNo"
+            id="meterNo"
             placeholder="555-555-1234"
-            formControlName="tel"
+            formControlName="meterNo"
             autocomplete="off">
-            <mat-icon matSuffix>cell_wifi</mat-icon>
-            <mat-error *ngIf="internetFormGroup.invalid">Phone number {{ erroMessage() }}</mat-error>
+            <mat-icon matSuffix>speed</mat-icon>
+            <mat-error *ngIf="electricityFormGroup.invalid">Phone number {{ erroMessage() }}</mat-error>
           </mat-form-field>
 
           <button mat-stroked-button
             color="primary"
             class="col-12 col-lg-12 my-2"
             type="submit"
-            [disabled]="!internetFormGroup.valid">Pay</button>
+            [disabled]="!electricityFormGroup.valid">Pay</button>
 
       </form>
     </div>

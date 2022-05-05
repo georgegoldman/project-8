@@ -10,6 +10,7 @@ export interface Provider {
 export interface Payment {
   name: string,
   route:string,
+  packages: Service[]
 }
 
 

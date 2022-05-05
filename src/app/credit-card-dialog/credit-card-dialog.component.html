@@ -1,0 +1,57 @@
+<h1 mat-dialog-title>Card payment
+  <mat-icon aria-hidden="false" aria-label="Example home icon">credit_card</mat-icon></h1>
+<div mat-dialog-content>
+  <p>Enter your card details</p>
+  <form [formGroup]="card" >
+    <mat-form-field appearance="legacy" class="col-12 me-2 col-lg-5">
+      <mat-label>Card Details</mat-label>
+      <input matInput
+      id="cardNumber"
+      formControlName="cardNumber"
+      autocomplete="off" >
+      <mat-error *ngIf="card.invalid">Card number. {{ erroMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="col-3 me-1 col-lg-1">
+      <mat-label>Month</mat-label>
+      <input matInput
+      type="text"
+      id="month"
+      formControlName="month"
+      autocomplete="off"
+      minlength="2"
+      maxlength="2" >
+      <mat-hint>02</mat-hint>
+      <mat-error *ngIf="card.invalid">Month {{ erroMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="col-3 me-1 col-lg-1">
+      <mat-label>Year</mat-label>
+      <input matInput
+      type="text"
+      id="year"
+      formControlName="year"
+      autocomplete="off"
+      minlength="2"
+      maxlength="2" >
+      <mat-hint>24</mat-hint>
+      <mat-error *ngIf="card.invalid">Year {{ erroMessage() }}</mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="col-3 me-2 col-lg-1">
+      <mat-label>CVC</mat-label>
+      <input matInput
+      type="text"
+      id="exp"
+      maxlength="3"
+      minlength="3"
+      formControlName="cvc"
+      autocomplete="off" >
+      <mat-error *ngIf="card.invalid">Expiry date {{ erroMessage() }}</mat-error>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-stroked-button color="warn" (click)="onNoClick()">cancel</button>
+  <button mat-stroked-button color="primary" [disabled]="!card.valid" [mat-dialog-close]="card.value"  >Proceed</button>
+</div>

@@ -6,28 +6,27 @@
 
     <div class="col-12 bglight h-100 pt-5">
       <form class="col-12" [formGroup]="airtime" (ngSubmit)="onSubmit()">
+
+          <mat-form-field class="col-12" appearance="fill">
+            <mat-label>Network </mat-label>
+            <input matInput
+            value="{{airtime.controls['network'].value}}"
+            id="network"
+            formControlName="network"
+            >
+          </mat-form-field>
+
           <mat-form-field class="col-12" appearance="legacy">
             <mat-label>Amount</mat-label>
-            <mat-icon matPrefix>attach_money</mat-icon>
             <input type="number"
               name="amount"
               id="amount"
               matInput
-              placeholder="$100"
+              placeholder="100"
               formControlName="amount"
               autocomplete="off">
+              <mat-hint>Amount in Naira</mat-hint>
               <mat-error *ngIf="airtime.invalid">An Amount {{ erroMessage() }}</mat-error>
-          </mat-form-field>
-
-          <mat-form-field appearance="legacy" class="col-12">
-            <mat-label>Network</mat-label>
-            <mat-select formControlName="network" id="network">
-              <mat-option value="mtn">MTN</mat-option>
-              <mat-option value="glo">GLO</mat-option>
-              <mat-option value="9mobile">9mobile</mat-option>
-              <mat-option value="airtel">AIRTEL</mat-option>
-            </mat-select>
-            <mat-error *ngIf="airtime.invalid">Network {{ erroMessage() }}</mat-error>
           </mat-form-field>
 
           <mat-form-field class="airtime-full-width col-12" appearance="legacy">
@@ -49,7 +48,6 @@
             class="col-12 col-lg-12 my-2"
             type="submit"
             [disabled]="!airtime.valid">Pay</button>
-
       </form>
     </div>
   </div>

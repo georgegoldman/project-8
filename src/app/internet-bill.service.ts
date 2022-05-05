@@ -3,24 +3,19 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { CurrentRouteGetterService } from './current-route-getter.service';
 import { PAYMENTS } from './mock-payment';
-import {  PackageAmount, Payment } from './payment';
+import {  PackageAmount, Payment, Service } from './payment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class InternetBillService {
-  ispPackages!: PackageAmount[]
-  ISPs: Payment = PAYMENTS[1]
 
-  constructor(private currentRoute: CurrentRouteGetterService) { }
+  constructor() { }
 
-  getInternetPayment(): Observable<Payment> {
-    const internetPlans = of(this.ISPs)
-    return internetPlans
+  getInternetPayment(): Observable<Service[]> {
+    const internetPackages = of(PAYMENTS[1].packages)
+    return internetPackages
   }
-  getInternetPaymentPackages(x:string): void {
-    this.getInternetPayment()
-      .subscribe(x => console.warn(x))
-  }
+
 }
 
