@@ -7,6 +7,8 @@
       <mat-label>Card Details</mat-label>
       <input matInput
       id="cardNumber"
+      maxlength="16"
+      minlength="16"
       formControlName="cardNumber"
       autocomplete="off" >
       <mat-error *ngIf="card.invalid">Card number. {{ erroMessage() }}</mat-error>

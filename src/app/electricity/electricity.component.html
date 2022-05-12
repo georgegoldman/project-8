@@ -20,7 +20,7 @@
 
           <mat-form-field class="col-12" appearance="legacy" >
             <mat-label>Package</mat-label>
-            <mat-select formControlName="package" (selectionChange)="setAmount($event.value)">
+            <mat-select formControlName="package" >
               <mat-option *ngFor="let package of packages"
               value="{{package.packageName}}"
               >{{package.packageName}}</mat-option>
@@ -30,10 +30,11 @@
           <mat-form-field class="col-12" appearance="legacy">
             <mat-label>Amount </mat-label>
             <input matInput
-            value="{{electricityFormGroup.controls['amount'].value}}"
+            type="number"
             id="amount"
             formControlName="amount"
             >
+            <mat-error *ngIf="electricityFormGroup.invalid">{{getAmountError()}}</mat-error>
           </mat-form-field>
 
           <mat-form-field class=" col-12" appearance="legacy">

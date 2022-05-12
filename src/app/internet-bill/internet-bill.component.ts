@@ -2,11 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
 import { CreditCardDialogComponent } from '../credit-card-dialog/credit-card-dialog.component';
-import { CurrentRouteGetterService } from '../current-route-getter.service';
 import { InternetBillService } from '../internet-bill.service';
-import { Package, PackageAmount, Payment } from '../payment'
+import { Package } from '../payment'
 import { PackagesService } from '../service/packages.service';
 
 @Component({
@@ -17,8 +15,6 @@ import { PackagesService } from '../service/packages.service';
 export class InternetBillComponent implements OnInit {
 
   packages: Package[] = []
-
-  // internetBills: Payment
 
   internetFormGroup = new FormGroup({
     provider: new FormControl(''),
@@ -38,7 +34,6 @@ export class InternetBillComponent implements OnInit {
     this.internetFormGroup.controls['provider'].disable()
     this.internetFormGroup.controls['amount'].disable()
     this.setPackage()
-    // console.log(this.packages)
   }
 
 
@@ -75,10 +70,16 @@ export class InternetBillComponent implements OnInit {
     const dialogRef = this.dialog.open(CreditCardDialogComponent, {
     })
 
+    const transactionId = "this is your trancation id #37821200378_ for tracking"
+
     dialogRef.afterClosed()
       .subscribe(
         y => {
-          console.log(y);
+          if(y === undefined){
+            alert('Transaction canceled')
+          }else{
+            alert(transactionId)
+          }
         }
       )
   }

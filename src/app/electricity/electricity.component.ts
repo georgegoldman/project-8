@@ -1,11 +1,11 @@
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { ElectricityService } from '../electricity.service';
 import { Package } from '../payment';
 import { PackagesService } from '../service/packages.service';
 
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 import { CreditCardDialogComponent } from '../credit-card-dialog/credit-card-dialog.component';
 
 export interface DialogData {
@@ -56,13 +56,12 @@ export class ElectricityComponent implements OnInit {
       }))
   }
 
-  setAmount(packageName: string): void {
-    this.getPackages.getPackages()
-      .subscribe(e => {
-        e.forEach(a => {
-          if(a.packageName === packageName) this.electricityFormGroup.controls['amount'].setValue(a.packageAmount)
-        })
-      })
+  getAmountError():string {
+    if ( this.electricityFormGroup.controls['amount'].value < 50)
+    {
+      return this.electricityFormGroup.controls['amount'].value
+    }
+    return this.electricityFormGroup.controls['amount'].hasError('required') ? this.electricityFormGroup.controls['amount'].value : ''
   }
 
   erroMessage(): string {
@@ -81,16 +80,20 @@ export class ElectricityComponent implements OnInit {
       data: this.electricityFormGroup.getRawValue()
     })
 
+    const transactionId = "this is your trancation id #3783753878_ for tracking"
+
     dialogRef.afterClosed()
       .subscribe(
-        result => {
-          console.log(result);
+        y => {
+          if(y === undefined){
+            alert('Transaction canceled')
+          }else{
+            alert(transactionId)
+          }
         }
       )
   }
-
   onSubmit(): void {
-    console.warn(this.electricityFormGroup.getRawValue())
     this.openDialog()
   }
 

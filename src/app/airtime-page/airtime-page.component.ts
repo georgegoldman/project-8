@@ -1,15 +1,7 @@
 
-import { Component, Inject } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import {
-  AbstractControl,
-  ControlValueAccessor,
-  FormBuilder,
-  FormControl,
-  FormGroup,
-  NgControl,
-  Validators
-} from '@angular/forms';
+import { Component} from '@angular/core';
+import {MatDialog } from '@angular/material/dialog';
+import {  FormControl, FormGroup,  Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { AirtimeService } from '../airtime.service';
 import { CreditCardDialogComponent } from '../credit-card-dialog/credit-card-dialog.component';
@@ -50,16 +42,21 @@ export class AirtimePageComponent{
       data: this.airtime.getRawValue()
     })
 
+    const transactionId = "this is your trancation id #3783000878_ for tracking"
+
     dialogRef.afterClosed()
       .subscribe(
-        result => {
-          console.log(result);
+        y => {
+          if(y === undefined){
+            alert('Transaction canceled')
+          }else{
+            alert(transactionId)
+          }
         }
       )
   }
 
   onSubmit(): void {
-    console.warn(this.airtime.getRawValue())
     this.openDialog()
   }
 
@@ -74,30 +71,3 @@ export class AirtimePageComponent{
 
 }
 
-
-// @Component({
-//   selector: 'dialog-overview-dialog',
-//   templateUrl: 'dialog-overview-dialog.html'
-// })
-// export class DialogOverviewDialog {
-
-//   card = new FormGroup({
-//     cardNumber: new FormControl('', Validators.required),
-//     month: new FormControl('', Validators.required),
-//     year: new FormControl('', Validators.required),
-//     cvc: new FormControl('', Validators.required)
-//   })
-
-//   constructor(
-//     public dialogRef: MatDialogRef<DialogOverviewDialog>,
-//     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-//   ){}
-
-//   onNoClick(): void {
-//     this.dialogRef.close()
-//   }
-
-//   erroMessage(): string {
-//     return 'is required'
-//   }
-// }
